@@ -1,0 +1,37 @@
+[
+  {
+    "text": "GET all productsList",
+    "get": "api_exercise/productsList",
+    "expect": { "path": "responseCode", "eq": 200 }
+  },
+  {
+    "text": "POST create new user",
+    "status": 200,
+    "post": "api_exercise/createAccount",
+    "form": true,
+    "body": {
+      "name": "JohnDoe",
+      "email": "faker.email",
+      "password": "password123",
+      "title": "Mr",
+      "birth_date": "10",
+      "birth_month": "January",
+      "birth_year": "1990",
+      "firstname": "John",
+      "lastname": "Doe",
+      "company": "Tech Corp",
+      "address1": "123 Main St",
+      "address2": "Suite 400",
+      "country": "United States",
+      "zipcode": "12345",
+      "state": "California",
+      "city": "San Francisco",
+      "mobile_number": "1234567890"
+    },
+    "schema": "schemas/create_user",
+    "expect": [
+      { "path": "responseCode", "eq": 201 },
+      { "path": "message", "eq": "User created!" }
+    ]
+  }
+]
